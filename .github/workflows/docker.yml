@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 name: Docker Series Builds
 
-# #uncomment to enable push trigger
+#uncomment to enable push trigger
 on: [push]
 
  jobs:
