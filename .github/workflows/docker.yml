@@ -45,20 +45,3 @@ on: [push]
 #         docker push aimvector/nodejs:1.0.0
 #         docker push aimvector/golang:1.0.0
 #         docker push aimvector/python:1.0.0
-=======
- name: Docker Series Builds
-
- on: [push]
-
- jobs:
-   build:
-     runs-on: ubuntu-latest
-     steps:
-     - uses: actions/checkout@v2
-     - name: docker build python
-       run: |
-         docker build ./python -t aimvector/python:1.0.0
-     - name: docker push
-       run: |
-         docker push aimvector/python:1.0.0
->>>>>>> 8ca6851b6b52fbccd5753f0fcf6afb643ca28b64
