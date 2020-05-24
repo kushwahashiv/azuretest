@@ -1,13 +1,13 @@
-# name: Docker Series Builds
+name: Docker Series Builds
 
 # #uncomment to enable push trigger
-# #on: [push]
+on: [push]
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v2
+ jobs:
+  build:
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v2
 #     - name: docker login
 #       env:
 #         DOCKER_USER: ${{ secrets.DOCKER_USER }}   
@@ -21,12 +21,24 @@
 #       run: |
 #         docker build ./nodejs -t aimvector/nodejs:1.0.0
 #     - name: docker build python
-#       run: |
-#         docker build ./python -t aimvector/python:1.0.0
+       run: |
+         docker build ./python -t aimvector/python:1.0.0
 #     - name: docker build golang
 #       run: |
 #         docker build ./golang -t aimvector/golang:1.0.0
-#     - name: docker push
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az account show
+          az storage -h
+        
+#- name: docker push
 #       run: |
 #         docker push aimvector/csharp:1.0.0
 #         docker push aimvector/nodejs:1.0.0
