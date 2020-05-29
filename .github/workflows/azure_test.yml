@@ -22,8 +22,8 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-             docker build ./python -t aimvector/python:1.0.0
-             docker push aimvector/python:1.0.0
+             docker build ./python -t azuretestcontainerregistry007.azurecr.io/aimvector/python:1.0.0
+             docker push azuretestcontainerregistry007.azurecr.io/aimvector/python:1.0.0
 #
 #        - name: 'Deploy to Azure Container Instances'
 #          uses: 'azure/aci-deploy@v1'
