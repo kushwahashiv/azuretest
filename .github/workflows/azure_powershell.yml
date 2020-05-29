@@ -13,7 +13,7 @@ jobs:
     - name: Login via Az module
       uses: azure/login@v1.1
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS}}
+        creds: ${{secrets.AZURE_PASSORD}}
         enable-AzPSSession: true 
     
     - name: Run Az CLI script
