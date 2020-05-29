@@ -23,5 +23,4 @@ jobs:
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
              docker build ./python -t aimvector/python:1.0.0
-             docker login ${{ secrets.REGISTRY_LOGIN_SERVER }} --username ${{ secrets.REGISTRY_USERNAME }} --password ${{ secrets.REGISTRY_PASSWORD }}
              docker push aimvector/python:1.0.0
